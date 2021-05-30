@@ -77,10 +77,12 @@ if (packageInfo) {
   chalk.green("🏁 Added vite scripts in package json");
 }
 
+const currentDirectory = process.cwd();
+
 chalk.blue("Creating vite config...");
 
 fs.writeFileSync(
-  `${process.cwd()}/vite.config.js`,
+  `${currentDirectory}/vite.config.js`,
   `import reactRefresh from '@vitejs/plugin-react-refresh'
 
 export default {
@@ -89,7 +91,19 @@ export default {
   "utf-8"
 );
 
-chalk.green("✅ Create config file for vite");
+chalk.green("✅ Created config file for vite");
+
+chalk.yellow("⚠ Moving index.html to root");
+
+fs.renameSync( `${currentDirectory}/public/index.html` , );
+
+chalk.yellow("Updating HTML Content");
+
+const newHTMLPath = `${currentDirectory}/index.html`;
+
+const htmlContent = fs.readFileSync(newHTMLPath, "utf-8");
+
+fs.writeFileSync(newHTMLPath, htmlContent.replaceAll(/%PUBLIC_URL%/g, ""));
 
 chalk.grey("ℹ️ Copy and run below script:");
 

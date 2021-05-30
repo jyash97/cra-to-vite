@@ -22,7 +22,8 @@
     "fdir": "^5.1.0",
     "find-package-json": "^1.2.0",
     "picomatch": "^2.3.0",
-    "recast": "^0.20.4"
+    "recast": "^0.20.4",
+    "vite-react-jsx": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
