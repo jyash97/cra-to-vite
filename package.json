@@ -1,0 +1,30 @@
+{
+  "name": "cra-to-vite",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bin/index.js",
+  "bin": {
+    "cra-to-vite": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon bin/index.js",
+    "vite:start": "vite",
+    "vite:build": "vite build"
+  },
+  "author": "jyash97",
+  "license": "ISC",
+  "dependencies": {
+    "acorn": "^8.2.4",
+    "acorn-jsx": "^5.3.1",
+    "chalk": "^4.1.1",
+    "detect-indent": "^6.1.0",
+    "fdir": "^5.1.0",
+    "find-package-json": "^1.2.0",
+    "picomatch": "^2.3.0",
+    "recast": "^0.20.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
