@@ -93,4 +93,4 @@ chalk.green("✅ Create config file for vite");
 
 chalk.grey("ℹ️ Copy and run below script:");
 
-chalk.brightBlue("yarn add vite @vitejs/plugin-react-refresh");
+chalk.blueBright("yarn add vite @vitejs/plugin-react-refresh");
