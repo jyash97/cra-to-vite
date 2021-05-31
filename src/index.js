@@ -1,7 +1,7 @@
 const { fdir } = require("fdir");
 const fs = require("fs");
 const path = require("path");
-const { exec } = require("child_process");
+const { execSync } = require("child_process");
 const { Parser } = require("acorn");
 const chalk = require("chalk");
 const JSXParser = Parser.extend(require("acorn-jsx")());
@@ -95,32 +95,29 @@ fs.renameSync(`${rootDirectory}/public/index.html`, newHTMLPath);
 const htmlContent = fs.readFileSync(newHTMLPath, "utf-8");
 fs.writeFileSync(newHTMLPath, htmlContent.replace(/%PUBLIC_URL%/g, ""));
 
-
 /** Install Deps */
 const yarnLockExists = fs.existsSync(`${rootDirectory}/yarn.lock`);
 
-let installCommand = ""
+let installCommand = "";
 
 if (yarnLockExists) {
-  installCommand = `yarn add ${viteConfig.dependencies.join(" ")} --dev`
+  installCommand = `yarn add ${viteConfig.dependencies.join(" ")} --dev`;
 } else {
-  installCommand = `npm install ${viteConfig.dependencies.join(" ")} --save-dev`;
+  installCommand = `npm install ${viteConfig.dependencies.join(
+    " "
+  )} --save-dev`;
 }
 
-console.log(chalk.grey("📥 Installing dependencies"))
+console.log(chalk.grey("📥 Installing dependencies"));
 
-exec(installCommand, (err, stdout, stderr) => {
-  if (err) {
-    console.log(chalk.redBright("🚨 Error while installing deps: ", err))
-    return;
-  }
-
-  console.log(chalk.green(`Deps Installer: ${stdout}`));
-  console.log(chalk.yellow(`Deps Installer: ${stderr}`));
+execSync(installCommand, {
+  stdio: "inherit",
 });
 
+console.log("\n")
+
 console.log(
-  chalk.yellowBright("NOTE:"),
+  chalk.bold.yellowBright("NOTE:"),
   chalk.yellow(
     `Add <script type="module" src="YOUR_ENTRY_FILE"></script> to index.html`
   )
