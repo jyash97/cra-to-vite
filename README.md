@@ -12,6 +12,18 @@ I wanted fast development workflow in create react app and `Vite` seems to solve
 npx cra-to-vite
 ```
 
+### Generated scripts
+
+#### For development
+
+```
+yarn vite:start
+```
+
+#### For Build
+```
+yarn vite:build
+```
 ## Features Supported
 - Adds config based on react version
 - Add dev dependencies

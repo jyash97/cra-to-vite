@@ -7,10 +7,7 @@
     "cra-to-vite": "./bin/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon bin/index.js",
-    "vite:start": "vite",
-    "vite:build": "vite build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jyash97",
   "license": "ISC",
@@ -23,7 +20,5 @@
     "find-package-json": "^1.2.0",
     "picomatch": "^2.3.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  }
+  "devDependencies": {}
 }
