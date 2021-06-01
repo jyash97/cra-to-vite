@@ -11,9 +11,20 @@ I wanted fast development workflow in create react app and `Vite` seems to solve
 
 ![cra-to-vite-final](https://user-images.githubusercontent.com/22376783/120222624-dc60a380-c25d-11eb-9dd9-4727a9cb4817.gif)
 
+## Install
+
+```
+npm i -g cra-to-vite
+```
 
 ## Usage
-**`Note:` This still experimental, do backup the files in case something goes wrong**
+
+```
+cra-to-vite
+```
+Or 
+
+If not installed globally use `npx`
 
 ```
 npx cra-to-vite
