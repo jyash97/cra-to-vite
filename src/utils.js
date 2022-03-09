@@ -33,9 +33,11 @@ function getPackageJSON() {
 
 function getViteConfig() {
   return {
-    content: `import { defineConfig } from 'vite'
-      import react from '@vitejs/plugin-react'
-      export default defineConfig({
+    content: `
+    import { defineConfig } from 'vite'
+    import react from '@vitejs/plugin-react'
+      
+    export default defineConfig({
         plugins: [react()]
       })`,
     dependencies: ["vite", "@vitejs/plugin-react"],
