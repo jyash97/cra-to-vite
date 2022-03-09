@@ -27,31 +27,20 @@ function getPackageJSON() {
   return {
     file: `${process.cwd()}/package.json`,
     indent: 4,
-    json: {}
+    json: {},
   };
 }
 
-function getViteConfig(isReact17) {
-  if (isReact17) {
-    return {
-      content: `import reactJsx from 'vite-react-jsx'
-
-export default {
-  plugins: [
-    reactJsx(),
-  ]
-}`,
-      dependencies: ["vite", "vite-react-jsx"],
-    };
-  }
-
+function getViteConfig() {
   return {
-    content: `import reactRefresh from '@vitejs/plugin-react-refresh'
-
-export default {
-  plugins: [reactRefresh()]
-}`,
-    dependencies: ["vite", "@vitejs/plugin-react-refresh"],
+    content: `
+    import { defineConfig } from 'vite';
+    import react from '@vitejs/plugin-react';
+      
+    export default defineConfig({
+        plugins: [react()]
+      })`,
+    dependencies: ["vite", "@vitejs/plugin-react"],
   };
 }
 
@@ -74,5 +63,5 @@ function addViteScripts(packageJSON) {
 module.exports = {
   getPackageJSON,
   addViteScripts,
-  getViteConfig
+  getViteConfig,
 };
