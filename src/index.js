@@ -73,11 +73,11 @@ fs.writeFileSync(
   }
 );
 
-const isReact17 = packageInfo.json.dependencies.react
+/* const isReact17 = packageInfo.json.dependencies.react
   .split(".")[0]
   .includes("17");
-
-const viteConfig = getViteConfig(isReact17);
+ */
+const viteConfig = getViteConfig();
 fs.writeFileSync(
   `${rootDirectory}/vite.config.js`,
   viteConfig.content,
